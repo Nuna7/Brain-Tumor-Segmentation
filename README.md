@@ -57,7 +57,7 @@ Key innovations in AHF-U-Net include:
 
 ## Weights
 
-The model weights is provided in this repository as **best_model.pth**.
+The best model weights is provided in this repository as **best_model.pth**.
 
 ## Citation
 
