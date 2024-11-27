@@ -1,6 +1,6 @@
 # Attention-Guided Hierarchical Fusion U-Net for Brain Tumor Segmentation
 
-This repository contains the PyTorch implementation of the **Attention-guided Hierarchical Fusion U-Net (AHF-U-Net)**, a novel U-Net variant for medical image segmentation. The model is evaluated on the **Brain Tumor Segmentation (BraTS)** dataset and achieves a Dice Loss of **0.8012** (could be improve with hyperparameter tuning) using limited computational resources. 
+This repository contains the PyTorch (self)implementation of the **Attention-guided Hierarchical Fusion U-Net (AHF-U-Net)**, a novel U-Net variant for medical image segmentation. The model is evaluated on the **Brain Tumor Segmentation (BraTS)** dataset and achieves a Dice Loss of **0.8012** (could be improve with hyperparameter tuning) using limited computational resources. 
 
 ---
 
@@ -9,8 +9,6 @@ This repository contains the PyTorch implementation of the **Attention-guided Hi
 The AHF-U-Net extends the traditional U-Net by introducing:
 - **Encoder Attention Fusion (EAF) module** and **Decoder Attention Fusion (DAF) module**: Incorporating spatial and channel attention mechanisms to refine spatial information and channel selection during encoding and decoding.
 - **Hierarchical Attention-Enhanced (HAE) skip connections**: Enhancing feature reuse and improving boundary refinement.
-
-In addition, an uncertainty-aware variant (**UA-AHF-U-Net**) is proposed to produce uncertainty maps alongside segmentation maps, enabling safer and more trustworthy AI applications in medical imaging.
 
 ---
 
@@ -24,15 +22,9 @@ This implementation utilizes the **BraTS multimodal brain tumor segmentation dat
 
 ### Segmentation Labels
 The dataset provides manually annotated labels approved by expert neuro-radiologists. The labels include:
-- **Label 1**: Necrotic and non-enhancing tumor core (NCR/NET).
-- **Label 2**: Peritumoral edema (ED).
-- **Label 4**: GD-enhancing tumor (ET).
-
-### Preprocessing
-All images are:
-- Skull-stripped.
-- Co-registered to a common anatomical template.
-- Interpolated to a uniform voxel size of \(1 \, \text{mm}^3\).
+- Necrotic and non-enhancing tumor core (NCR/NET).
+- Peritumoral edema (ED).
+- GD-enhancing tumor (ET).
 
 ---
 
@@ -45,7 +37,8 @@ All images are:
 Key innovations in AHF-U-Net include:
 1. **Encoder Attention Fusion (EAF)** and **Decoder Attention Fusion (DAF)** modules to selectively emphasize relevant spatial regions and feature channels.
 2. **Hierarchical Attention-Enhanced (HAE) skip connections** for better feature integration across scales.
-3. Evaluation against 11 state-of-the-art models, demonstrating superior performance in coarse-grained medical images with unclear boundaries.
+
+![Diagram](./diagram.png)
 
 ---
 
